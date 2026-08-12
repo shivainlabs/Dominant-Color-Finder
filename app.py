@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib.image
 from sklearn.cluster import KMeans
 from palette import create_color_palette
+from PIL import Image
+import numpy as np
 
 
 st.header("Dominant Color Finder")
@@ -19,20 +21,15 @@ if uploaded_file is not None:
     
     with col2:
         st.subheader("Dominant Colors")
-        image = matplotlib.image.imread(uploaded_file)
-        image = image[:,:,:3]
-
+        image = Image.open(uploaded_file).convert("RGB")
+        # image = matplotlib.image.imread(uploaded_file)
+        image = np.array(image)
         X = image.reshape(-1,3)
         
-        kmeans = KMeans(n_clusters=5)
+        kmeans = KMeans(n_clusters=5,random_state=42)
         kmeans.fit(X)
         
-        if image.max() <= 1:
-            dominant_colors = (kmeans.cluster_centers_*255).astype(int)
-        else:
-            dominant_colors = kmeans.cluster_centers_.astype(int)
-            
-        st.write(dominant_colors)
+        dominant_colors = kmeans.cluster_centers_.astype(int)            
         palette = create_color_palette(dominant_colors)
         st.image(palette,width=600)
         
