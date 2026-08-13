@@ -21,8 +21,7 @@ if uploaded_file is not None:
     
     with col2:
         st.subheader("Dominant Colors")
-        image = Image.open(uploaded_file).convert("RGB")
-        # image = matplotlib.image.imread(uploaded_file)
+        image = Image.open(uploaded_file).convert("RGB")        
         image = np.array(image)
         X = image.reshape(-1,3)
         
@@ -31,7 +30,7 @@ if uploaded_file is not None:
         
         dominant_colors = kmeans.cluster_centers_.astype(int)            
         palette = create_color_palette(dominant_colors)
-        st.image(palette,width=600)
+        st.image(palette,width=700)
         
         
    
