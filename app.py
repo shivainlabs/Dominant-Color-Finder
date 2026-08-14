@@ -8,18 +8,23 @@ import numpy as np
 
 st.header("Dominant Color Finder")
 
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Choose a file",type=['jpg','jpeg','png','webp','bmp','gif'])
 
 col1,col2 = st.columns(2)
 
 if uploaded_file is not None:
+    try:
+        image = Image.open(uploaded_file).convert("RGB")
+    except Exception:
+        st.error("Please upload a valid image file.")
+        st.stop()
+    
     with col1:
         st.subheader("Uploaded File")
         st.image(uploaded_file)
     
     with col2:
-        st.subheader("Dominant Colors")
-        image = Image.open(uploaded_file).convert("RGB")        
+        st.subheader("Dominant Colors")     
         image = np.array(image)
         X = image.reshape(-1,3)
         

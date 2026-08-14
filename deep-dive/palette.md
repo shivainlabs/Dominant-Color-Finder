@@ -5,7 +5,7 @@
 `draw.rectangle()` tells PIL : Draw a rectange between these two points.
     `[x1, y1, x2, y2]`
 
-Our co-ordinate system is like this : 
+## 1. Our co-ordinate system is like this : 
 ![Coordinate](/images/image-5.png)
 
 Our co-ordinates : 
@@ -16,6 +16,14 @@ Our co-ordinates :
 ```
 <br></br>
 
-For first co-ordinate 
+## 2. For first co-ordinate 
 
 ![First-Co-ordinate](/images/image-6.png)
+
+
+## 3. Hexadecimal Formatting 
+
+![Hexadecimal Formatting](/images/image-7.png)
+<br>
+
+![Formatting Example](/images/image-8.png)
