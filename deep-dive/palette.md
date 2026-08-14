@@ -27,3 +27,17 @@ Our co-ordinates :
 <br>
 
 ![Formatting Example](/images/image-8.png)
+
+<br>
+
+## 4. In brightness how do we find the brightnees?
+
+![brightness formula](/images/image-9.png)
+
+So when green changes by 100 units, it has a much larger effect on the calculated luminance than blue changing by 100 units.
+
+## 5. Text Color
+
+![Text Color](/images/image-10.png)
+
+`text_color = "black" if brightness > 128 else "white"`
