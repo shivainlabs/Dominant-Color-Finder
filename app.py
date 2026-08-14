@@ -1,7 +1,5 @@
 import streamlit as st
-import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.image
 from sklearn.cluster import KMeans
 from palette import create_color_palette
 from PIL import Image
