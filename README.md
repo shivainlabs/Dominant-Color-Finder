@@ -121,8 +121,6 @@ dominant-color-finder/
 │
 └── deep-dive/
     ├── image-array.md
-    ├── reshape.md
-    ├── kmeans.md
     └── palette.md
 ```
 
@@ -144,7 +142,7 @@ and concepts discovered while building the project.
 Clone the repository:
 
 ``` bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/shivainlabs/Dominant-Color-Finder.git
 cd dominant-color-finder
 ```
 
